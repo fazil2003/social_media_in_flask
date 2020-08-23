@@ -1,0 +1,219 @@
+<html>
+
+<script src='/static/jquery.min.js'></script>
+
+
+<div class='left'>
+<img src='/static/giphy1.gif' id='fimg' />
+
+	<img id='img' src='/static/logo.png' />
+	<div id='heading'>Swipe</div>
+	<div id='slogan'>Unlock the Real Experience in Social Media<br><br><span>Developed in Flask.</span></div>
+	
+	<br>
+	<div id='slogan'>Developed By</div>
+	<div id='name'>Fazil</div>
+</div>
+
+<div class='right'>
+<center>
+<p id='exp' class='exp1'>Share your Thoughts</p>
+<p id='exp' class='exp2'>Find New Friends</p>
+<p id='exp' class='exp3'>Support Mobile & Desktop</p>
+
+
+<img src='/static/donald_duck.jpg' id='img1' />
+
+<a href="{{ url_for('login') }}"><div id='btn' class='btn1'>Login</div></a>
+<a href="{{ url_for('register') }}"><div id='btn' class='btn2'>Register</div></a>
+
+<p style='margin-top:50px;margin-right:50px;float:right;font-size:30px;'>Start Swiping Now...</p>
+
+</center>
+</div>
+
+</html>
+
+
+
+
+
+
+<script>
+var body = $('.left');
+
+var a = $('.exp1');
+var b = $('.exp2');
+var c = $('.exp3');
+
+var colors = ['red', 'green', 'blue', 'orange', 'dodgerblue', 'purple'];
+var currentIndex = 0;
+setInterval(function () {
+	
+   body.css({
+     backgroundColor: colors[currentIndex]
+   });
+   
+   a.css({
+     backgroundColor: colors[currentIndex]
+   });
+   b.css({
+     backgroundColor: colors[currentIndex]
+   });
+   c.css({
+     backgroundColor: colors[currentIndex]
+   });
+   
+   if (!colors[currentIndex]) {
+       currentIndex = 0;
+   } else {
+       currentIndex++;
+   }
+}, 2000);
+
+
+var names = ['Kishore','Fazil','Nikkhil','Prasath'];
+var currentIndexx = 0;
+setInterval(function () {
+	
+   
+   
+   if (!names[currentIndexx]) {
+       currentIndexx = 0;
+   } else {
+	document.getElementById('name').innerHTML=names[currentIndexx]
+   
+       currentIndexx++;
+   }
+}, 2000);
+
+
+var namesx = ['scooby.jpg','donald_duck.jpg'];
+var currentIndexy = 0;
+setInterval(function () {
+	
+   
+   
+   if (!namesx[currentIndexy]) {
+       currentIndexy = 0;
+   } else {
+	document.getElementById('img1').src='/static/'+namesx[currentIndexy]
+   
+       currentIndexy++;
+   }
+}, 3000);
+</script>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+<style>
+body,button,p,h1,h2,h3,h4,h5,h6,span,a,li{
+font-family: 'Ubuntu', sans-serif;
+}
+
+</style>
+
+
+<style>
+#fimg{
+top:0;
+left:0;
+width:50%;
+position:fixed;
+opacity:0.5;
+}
+#exp{
+background-color:dodgerblue;
+color:white;
+padding-top:15px;
+padding-bottom:15px;
+font-size:25px;
+width:90%;
+transition:2s;
+border-radius:15px;
+}
+#img{
+margin-top:100px;
+width:200px;
+border:1px solid rgb(235,235,235);
+border-radius:25px;
+}
+#heading{
+font-size:100px;
+font-weight:bold;
+}
+#slogan{
+font-size:25px;
+margin-top:20px;
+}
+#slogan span{
+font-size:30px;
+}
+#name{
+font-size:30px;
+margin-top:20px;
+transition:3s;
+}
+body{
+margin:0;
+padding:0;
+}
+.left{
+width:50%;
+height:100%;
+float:left;
+#background:linear-gradient(to right,deepskyblue 0%,dodgerblue 50%,deepskyblue 100%);
+background-color:dodgerblue;
+color:white;
+transition:2s;
+
+text-align:center;
+}
+.right{
+width:50%;
+height:100%;
+float:left;
+
+text-align:center;
+}
+
+#img1{
+width:300px;
+max-height:300px;
+object-fit:contain;
+float:left;
+margin-left:50px;
+opacity:0.8;
+transition:1s;
+}
+
+#btn{
+color:white;
+background-color:dodgerblue;
+font-size:25px;
+padding:10px;
+width:300px;
+margin:10px;
+float:right;
+margin-right:50px;
+border:1px solid dodgerblue;
+
+}
+
+#btn:hover{
+background-color:white;
+color:dodgerblue;
+}
+#btn:active{
+background-color:royalblue;
+}
+
+.btn1{
+border-radius:20px 20px 20px 5px;
+
+}
+.btn2{
+border-radius:5px 20px 20px 20px;
+
+}
+</style>
